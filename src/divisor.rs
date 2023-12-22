@@ -1,20 +1,18 @@
 use crate::base_bit::{BaseBit, BASE_BITS_LENGTH};
 
 pub fn base_to_number(numbers: BaseBit) -> i32 {
-    let mut result: i32 = 0;
+    let mut result: u32 = 0;
     let base: u32 = numbers.base as u32;
     let bits: [u8; BASE_BITS_LENGTH] = numbers.bits;
-    let length_bits: i8 = BASE_BITS_LENGTH as i8 - 1;
-    let mut current_power: u32 = 0;
-    for i in 0..length_bits {
-        let index: usize = (i * -1 + length_bits).abs() as usize;
-        let bit: u8 = bits[index];
-        let base_power: u32 = base.pow(current_power);
-        let bit_power: u32 = base_power * (bit as u32);
-        result += bit_power as i32;
-        current_power += 1;
+    let mut exponential_base: u32 = 1;
+    for (i, &bit) in bits.iter().rev().enumerate() {
+        if bit == 0 {
+            continue;
+        }
+        result += exponential_base;
+        exponential_base *= base;
     }
-    return result;
+    return result as i32;
 }
 
 pub fn number_to_bit_list(number: i32, base: u8) -> [u8; BASE_BITS_LENGTH] {

@@ -28,6 +28,12 @@ fn main() {
 
     println!("Normal division result: {}", normal_result);
     println!("Base division result: {}", base_result);
+
+    let execution_ratio = elapsed_normal.as_secs_f32() / elapsed_base.as_secs_f32();
+    println!(
+        "Base division was {} times faster than normal division",
+        execution_ratio
+    );
 }
 
 fn base_divison(bits: [u8; BASE_BITS_LENGTH], denominator: u8) -> i32 {
