@@ -19,5 +19,5 @@ I wouldn't call the "bits" actual bits, because bits refer to binary, so when I 
 
 1. It is slower than regular division.
 2. The code is most likely not optimized to its fullest due to my lack of Rust knowledge.
-3. Again, the input needs base-divisor as the number to divide, which probably won't work for actual projects.
-4. It can only work with unsigned integer inputs and outputs.
+3. Again, the input needs the base-divisor representation of the number to divide, which probably won't work for actual projects.
+4. It can only work with unsigned integer inputs and outputs. There is a boolean that dictates if the size of the "bit" list includes non-integer digits, but the code doesn't actually take non-integer numbers into account, nor does it take signed numbers into account, only unsigned integer numbers will work.
