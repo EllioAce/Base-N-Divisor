@@ -4,7 +4,7 @@ Base-N Divisor was an experiment I recently coded up to see if using the base-di
 
 ## The result of the experiment
 
-It is slower by about 0.0001s, more or less. But I still feel that something along the lines of this process might create a future, simpler division process. But it also could just be one of those tiny experiments with nothing special about it. I am still proud of this tiny project even though I scrambled it in about 2 days. This was my first ever Rust project.
+It is slower by about 0.000001s, more or less. But I still feel that something along the lines of this process might create a future, simpler division process. But it also could just be one of those tiny experiments with nothing special about it. I am still proud of this tiny project even though I scrambled it in about 2 days. This was my first ever Rust project.
 
 ## May I use this to do division even though it will probably be slower than regular division?
 
