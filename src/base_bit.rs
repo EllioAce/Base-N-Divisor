@@ -9,11 +9,10 @@ pub struct BaseBit {
 }
 
 impl BaseBit {
-    pub fn new(bits: [u8; BASE_BITS_LENGTH], base: u8) -> Self {
-        let result: BaseBit = BaseBit {
+    pub fn new(bits: [u8; BASE_BITS_LENGTH], base: u8) -> BaseBit {
+        return BaseBit {
             bits: bits,
             base: base,
         };
-        return result;
     }
 }

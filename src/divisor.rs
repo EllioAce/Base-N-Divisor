@@ -5,11 +5,11 @@ pub fn base_to_number(numbers: BaseBit) -> i32 {
     let base: u32 = numbers.base as u32;
     let bits: [u8; BASE_BITS_LENGTH] = numbers.bits;
     let mut exponential_base: u32 = 1;
-    for (i, &bit) in bits.iter().rev().enumerate() {
+    for &bit in bits.iter().rev() {
         if bit == 0 {
             continue;
         }
-        result += exponential_base;
+        result += exponential_base * bit as u32;
         exponential_base *= base;
     }
     return result as i32;
