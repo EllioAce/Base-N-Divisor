@@ -7,6 +7,7 @@ pub fn base_to_number(numbers: BaseBit) -> i32 {
     let mut exponential_base: u32 = 1;
     for &bit in bits.iter().rev() {
         if bit == 0 {
+            exponential_base *= base;
             continue;
         }
         result += exponential_base * bit as u32;
