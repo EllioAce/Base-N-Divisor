@@ -20,20 +20,23 @@ fn main() {
     let now_normal = Instant::now();
     let normal_result: i32 = normal_divison(number, base);
     let elapsed_normal = now_normal.elapsed();
-    println!("Divided normally in {}s", elapsed_normal.as_secs_f32());
+    println!(
+        "Divided normally in {} nanoseconds",
+        elapsed_normal.as_nanos()
+    );
 
     let now_base = Instant::now();
     let base_result: i32 = base_divison(converted_bits, base);
     let elapsed_base = now_base.elapsed();
     println!(
-        "Divided using base division in {}s",
-        elapsed_base.as_secs_f32()
+        "Divided using base division in {} nanoseconds",
+        elapsed_base.as_nanos()
     );
 
     println!("Normal division result: {}", normal_result);
     println!("Base division result: {}", base_result);
 
-    let execution_ratio = elapsed_normal.as_secs_f32() / elapsed_base.as_secs_f32();
+    let execution_ratio: f32 = elapsed_normal.as_nanos() as f32 / elapsed_base.as_nanos() as f32;
     println!(
         "Base division was {} times faster than normal division",
         execution_ratio
